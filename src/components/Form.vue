@@ -34,7 +34,7 @@
                     label="Email*"
                     required
                     v-model="email"
-                    :rules="inputRules"
+                    :rules="inputRulesEmail"
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12">
@@ -98,7 +98,10 @@
       telefone: '',
       ultimaAv: '',
       inputRules: [
-        v =>  v && v.length >= 3 || 'Quantidade mínima de caracteres é 3'
+        v =>  v && v.length >= 2 && v.length <= 23 || 'Quantidade de caracteres não permitida'
+      ],
+      inputRulesEmail: [
+        v =>  v && v.indexOf('@') != -1 || 'Por favor coloque um e-mail valido!'
       ],
       loading: false
     }),

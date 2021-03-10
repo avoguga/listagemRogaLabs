@@ -80,13 +80,13 @@
               
               <v-divider class="mx-4"></v-divider>
               <div class="cardContent">
-                <div v-bind:class="{available: available}" class="menuUserContent">
-                  <div class="menuUserContentBottom">
+                <div class="menuUserContent">
+                  <div v-bind:class="{available: available}" class="menuUserContentBottom">
                     <body
                     class="usuarioCard">{{userList.email}}</body>
                     <div class="textBoxCard">
                       <body
-                  class="usuarioCard">{{userList.idade}}</body>
+                  class="usuarioCard">{{userList.idade}} anos</body>
                       <body
                     class="usuarioCard">{{userList.telefone}}</body>
                     </div>
@@ -97,7 +97,7 @@
                         >
                           <v-icon
                             color="#3A2298"
-                            @click="alterar()"
+                            v-on:click="available = !available"
                            >
                             mdi-pencil
                           </v-icon>
@@ -223,7 +223,7 @@
   }
   .available{
 
-    opacity: 0.6;
+    opacity: 0.4;
   }
   .usuarioHeader{
     color: #fff;
