@@ -6,5 +6,5 @@ Eu ainda testei a aplicação no smartphone mas como no teste não foi pedido re
 <br/>
 A aplicação está rodando em um servidor do firebase neste link: https://listagem-rogalabs.web.app/#/
 <br/>
-No geral foi uma boa forma de testar meus conhecimentos e ver até quão fundo eu poderia ir com esse framework em um periodo de tempo que me permiti. Agradeço ainda pela a oportunidade que a RogaLabs me proporcionou. 
+No geral foi uma boa forma de testar meus conhecimentos e ver até quão fundo eu poderia ir com esse framework em um periodo de tempo que me permiti. Agradeço também pela a oportunidade que a RogaLabs me proporcionou. 
 
