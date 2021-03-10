@@ -117,7 +117,7 @@
             telefone: this.telefone,
             ultimaAv: this.ultimaAv
           }
-
+          // Função para adicionar dados no banco do firestore
           db.collection('userLists').add(userLists).then(() => {
             this.loading = false;
             this.dialog = false;

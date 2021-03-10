@@ -163,10 +163,8 @@
     components: {
     Form
     },
-    inputRules: [
-        v =>  v && v.length >= 3 || 'Quantidade mínima de caracteres é 3'
-      ],
     computed: {
+      // Filtrando usuarios com a barra de pesquisa
     filteredUsers: function(){
       return this.userLists.filter((userList) => {
         return userList.usuario.toLowerCase().match(this.search.toLowerCase()) || userList.email.toLowerCase().match(this.search.toLowerCase());
@@ -175,12 +173,11 @@
     }
   },
     methods: {
+      // Essa função sortBy serviria para ordenar os usuarios pela atividade, mas não consegui completar
       sortBy(prop){
         this.userLists.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
       },
-      alterar () {
-        alert('Alterar atividade do usuario!')
-      },
+      // Função para remover dados do firestore 
       removeUser(userList){
         db.collection("userLists").doc(userList.id).delete()
       }
@@ -193,7 +190,8 @@
           ],
         userLists: [],
     }),
-    
+    //Firestore Realtime Listener para atualizar os usuarios na tela toda vez que ocorrer uma alteração
+
     created(){
       db.collection('userLists').onSnapshot(res => {
         const changes = res.docChanges();
@@ -217,7 +215,12 @@
   
 </script>
 
+
 <style scoped>
+
+/* Eu poderia apenas ter usado o que o vuetify me proporciona
+   mas como sou apegado a estilização css preferi usar os dois tipos de estilização*/
+
   .mainHeader{
     margin-top: 40px;
   }
